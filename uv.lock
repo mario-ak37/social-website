@@ -554,6 +554,7 @@ dependencies = [
     { name = "pillow" },
     { name = "pyopenssl" },
     { name = "python-decouple" },
+    { name = "requests" },
     { name = "social-auth-app-django" },
     { name = "werkzeug" },
 ]
@@ -567,6 +568,7 @@ requires-dist = [
     { name = "pillow", specifier = ">=12.0.0" },
     { name = "pyopenssl", specifier = ">=25.3.0" },
     { name = "python-decouple", specifier = ">=3.8" },
+    { name = "requests", specifier = ">=2.32.5" },
     { name = "social-auth-app-django", specifier = ">=5.6.0" },
     { name = "werkzeug", specifier = ">=3.1.3" },
 ]
