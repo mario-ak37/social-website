@@ -237,6 +237,19 @@ wheels = [
 ]
 
 [[package]]
+name = "easy-thumbnails"
+version = "2.10.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "django" },
+    { name = "pillow" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/04/2f/71f17c3ce65b25dd8fc8e513738c8496eadbd8bab94f39509a511ff99704/easy_thumbnails-2.10.1.tar.gz", hash = "sha256:a50aa5f99387546c35ab5ba1ea9b3cbbc5658e65601cd34949f62137c32c222e", size = 81446, upload-time = "2025-08-17T20:49:11.308Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b0/90/be137d0592501ec08d4a00c8430121e95dfe6c8114a1d4436b5cdd6b9803/easy_thumbnails-2.10.1-py3-none-any.whl", hash = "sha256:24462d63dd31543ef1585538b2bfefe0db96d3409bb431c70b81548fb2cfc5be", size = 79695, upload-time = "2025-08-17T20:49:09.119Z" },
+]
+
+[[package]]
 name = "editorconfig"
 version = "0.17.1"
 source = { registry = "https://pypi.org/simple" }
@@ -551,6 +564,7 @@ dependencies = [
     { name = "django-extensions" },
     { name = "django-unfold" },
     { name = "djlint" },
+    { name = "easy-thumbnails" },
     { name = "pillow" },
     { name = "pyopenssl" },
     { name = "python-decouple" },
@@ -565,6 +579,7 @@ requires-dist = [
     { name = "django-extensions", specifier = ">=4.1" },
     { name = "django-unfold", specifier = ">=0.71.0" },
     { name = "djlint", specifier = ">=1.36.4" },
+    { name = "easy-thumbnails", specifier = ">=2.10.1" },
     { name = "pillow", specifier = ">=12.0.0" },
     { name = "pyopenssl", specifier = ">=25.3.0" },
     { name = "python-decouple", specifier = ">=3.8" },
