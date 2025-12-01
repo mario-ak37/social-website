@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 
 from decouple import config
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     "social_django",
     "django_extensions",
     "easy_thumbnails",
+    "silk",
     # local apps
     "images",
 ]
@@ -57,6 +59,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "silk.middleware.SilkyMiddleware",
 ]
 
 ROOT_URLCONF = "bookmarks.urls"
@@ -180,3 +183,9 @@ SOCIAL_AUTH_PIPELINE = [
     "social_core.pipeline.social_auth.load_extra_data",
     "social_core.pipeline.user.user_details",
 ]
+
+
+# Another way to specify the URL for a model is by adding the ABSOLUTE_URL_OVERRIDES setting to your project.
+ABSOLUTE_URL_OVERRIDES = {
+    "auth.user": lambda u: reverse_lazy("user_detail", args=[u.username])
+}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% block title %}
+    People
+{% endblock title %}
+{% block content %}
+    <h1 class="mb-4">People</h1>
+    <div id="people-list"
+         class="d-grid"
+         style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 25px">
+        {% for user in users %}
+            <div class="user text-center p-3 border rounded shadow-sm bg-white">
+                <a href="{{ user.get_absolute_url }}">
+                    <img src="{% thumbnail user.profile.photo 180x180 %}"
+                         class="rounded-circle mb-2"
+                         style="width:120px;
+                                height:120px;
+                                object-fit:cover">
+                </a>
+                <div class="info mt-2">
+                    <a href="{{ user.get_absolute_url }}"
+                       class="title fw-semibold text-decoration-none">{{ user.get_full_name }}</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

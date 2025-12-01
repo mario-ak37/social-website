@@ -6,7 +6,7 @@ from django.contrib.auth.models import Group
 from unfold.admin import ModelAdmin
 from unfold.forms import AdminPasswordChangeForm, UserChangeForm, UserCreationForm
 
-from .models import Profile
+from .models import Contact, Profile
 
 User = get_user_model()
 
@@ -31,4 +31,9 @@ class UserAdmin(BaseUserAdmin, ModelAdmin):
 
 @admin.register(Group)
 class GroupAdmin(BaseGroupAdmin, ModelAdmin):
+    pass
+
+
+@admin.register(Contact)
+class ContactAdmin(ModelAdmin):
     pass
