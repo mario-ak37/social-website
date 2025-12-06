@@ -30,6 +30,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["mysite.com", "localhost", "127.0.0.1"]
 
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
 
 # Application definition
 
@@ -47,11 +51,14 @@ INSTALLED_APPS = [
     "django_extensions",
     "easy_thumbnails",
     "silk",
+    "debug_toolbar",
     # local apps
     "images",
+    "actions",
 ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
